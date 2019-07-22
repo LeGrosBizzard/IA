@@ -1,0 +1,76 @@
+import matplotlib.pyplot as plt
+import tensorflow as tf
+import numpy as np
+import pandas as pd
+import sys
+
+from sklearn.preprocessing import StandardScaler
+
+
+from dataset import importation_dataset
+from model import create_model
+from compilation import compilation_model
+from training import trainning_model
+
+
+
+
+
+assert hasattr(tf, "function")
+
+
+TARGETS_NAME = ["T-shirt/top", "Trouser", "Pullover", "Dress", "Coat",
+                "Sandal", "Shirt", "Sneaker", "Bag", "Ankle Boot"]
+
+
+
+
+
+
+
+images_train, targets_train, images = importation_dataset()
+
+model_output, model = create_model(images)
+
+model = compilation_model(model)
+
+trainning_model(model, images_train, targets_train)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
